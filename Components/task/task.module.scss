@@ -1,0 +1,178 @@
+.task{
+    width: 80%;
+    margin-left: auto;
+    background-color: rgb(249, 255, 249);
+    padding: 30px;
+    .divide{
+        padding: 5px 30px;
+        display: flex;
+        justify-content: space-between;
+        h3{
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        button{
+            outline: none;
+            border:none;
+            background-color: rgb(79, 194, 79);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    }
+    .inner{
+        background-color: white;
+        padding: 30px 10px;
+        .column{
+            padding: 20px 0;
+            background-color: rgb(209, 244, 209);
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+            place-items: center;
+        }
+        .data{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            .details{
+                padding: 20px 0;
+                background-color: rgb(221, 248, 221);
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+                place-items: center;
+                .name{
+                    font-size: .9rem;
+                }
+                .status{
+                    font-size: .8rem;
+                    padding: 2px 5px;
+                    border-radius: 6px;
+                    background-color: rgb(53, 149, 53);
+                    color: white;
+                }
+            }
+        }
+        button{
+            border: none;
+            padding: 5px 10px;
+            background-color: rgb(237, 28, 28);
+            color: white;
+            border-radius: 5px;
+        }
+    }
+}
+
+.assign{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 30;
+    display: fixed;
+    top: 0;
+    .close{
+        position: absolute;
+        height: 15px;
+        width: auto;
+        right: 40px;
+        top: 40px;
+        cursor: pointer;
+    }
+
+    .inner{
+        position: absolute;
+        padding: 20px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 70%;
+        width: 70%;
+        background-color: white;
+        box-shadow: .5px .5px 0 #ccc ,-.5px -.5px 0 #ccc ;
+
+        form{
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+
+
+            textarea{
+                height: 100px;
+                width: 100%;
+                resize: none;
+                padding: 10px;
+                font-size: 1rem;
+                border: none;
+                outline: rgb(137, 186, 137);
+                box-shadow: 1px 1px 0 #ccc ,-1px -1px 0 #ccc ;
+
+            }
+            label{
+                font-size: .8rem;
+                font-weight: 500;
+                padding-bottom: 5px;
+            }
+            .input{
+                width: 100%;
+                box-shadow: 1px 1px 0 #ccc ,-1px -1px 0 #ccc ;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 8px;
+
+                input{
+                    width: 100%;
+                    border: none;
+                    outline: none;
+                    font-size: 1rem;
+                }
+            }
+            .dates{
+                width: 80%;
+                display: flex;
+                margin: auto;
+                gap: 30px;
+                .date{
+                    width: 50%;
+                    .datepicker{
+                        width: 100%;
+                    }
+                }
+            }
+            .options{
+                width: 100%;
+                display: flex;
+                gap: 10px;
+                .option{
+                    width: 50%;
+                    select{
+                        border: none;
+                        outline: none;
+                        width: 100%;
+                    }
+                }
+            }
+            .title{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                .textarea{
+                    height: 100px;
+                    width: 100%;
+                    background-color: rgb(3, 71, 48);
+                }
+            }
+            button{
+                align-self: flex-end;
+                border: none;
+                background-color: rgb(69, 180, 69);
+                color: white;
+                padding: 4px 8px;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 1rem;
+            }
+
+        }
+    }
+}
