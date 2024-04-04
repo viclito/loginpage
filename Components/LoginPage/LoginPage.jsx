@@ -1,12 +1,27 @@
 "use client"
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import styles from './login.module.scss'
 import Image from 'next/image';
 import logo from '../../public/logoenfo.png'
 import loginimg from '../../public/loginimg1.png'
 import MainPage from '../mainpage/MainPage';
+import axios from 'axios';
 
 const LoginPage = () => {
+
+  useEffect(()=>{
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("https://dev.enfono.com/api_enfin/api/v1");
+        const data = response.data;
+        console.log(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  },[])
  
     const [loggedIn, setLoggedIn] = useState(false);
     const [username, setUsername] = useState('');

@@ -37,8 +37,8 @@ const Task = () => {
         const newTask = {
             id: Date.now(),
             title,
-            startDate: startDate ? startDate.toISOString() : '',
-            endDate: endDate ? endDate.toISOString() : '',
+            startDate: startDate ? startDate.toISOString().substring(0,10) : '',
+            endDate: endDate ? endDate.toISOString().substring(0,10) : '',
             status,
             description,
             project
@@ -87,7 +87,10 @@ const Task = () => {
                                 <div className={styles.name}>{item.project}</div>
                                 <div className={styles.name}>{item.startDate}</div>
                                 <div className={styles.name}>{item.endDate}</div>
-                                <div className={styles.status}>{item.status}</div>
+                                {item.status == 'Pending' && <div className={styles.status} style={{backgroundColor:'grey'}}>{item.status}</div>}
+                                {item.status == 'OnGoing' && <div className={styles.status} style={{backgroundColor:'rgb(141, 142, 66)'}}>{item.status}</div>}
+                                {item.status == 'Completed' && <div className={styles.status} >{item.status}</div>}
+                                {item.status == '' && <div className={styles.status} >{item.status}</div>}
                                 <div className={styles.action}>train</div>
                             </div>
                         </>
